@@ -1,0 +1,18 @@
+{
+  "name": "dynamic-language-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dynamic language translator with regional phrase/idiom support (HTML/CSS/JS + Node/Express).",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

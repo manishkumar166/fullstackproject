@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "description": "Regional idiom/phrase overrides by language pair and region",
+    "version": 1
+  },
+  "regions": [
+    { "id": "global", "label": "Global / Neutral" },
+    { "id": "us", "label": "United States (en-US)" },
+    { "id": "uk", "label": "United Kingdom (en-GB)" },
+    { "id": "in", "label": "India (en-IN)" },
+    { "id": "mx", "label": "Mexico (es-MX)" },
+    { "id": "es", "label": "Spain (es-ES)" }
+  ],
+  "languagePairs": [
+    { "from": "en", "to": "es" },
+    { "from": "es", "to": "en" },
+    { "from": "en", "to": "fr" },
+    { "from": "fr", "to": "en" },
+    { "from": "en", "to": "hi" },
+    { "from": "hi", "to": "en" }
+  ],
+  "idioms": [
+    {
+      "id": "break_a_leg",
+      "from": "en",
+      "to": "es",
+      "region": "mx",
+      "source": "break a leg",
+      "target": "¡mucha mierda!",
+      "tags": ["idiom", "theatre", "informal"]
+    },
+    {
+      "id": "break_a_leg_es",
+      "from": "en",
+      "to": "es",
+      "region": "es",
+      "source": "break a leg",
+      "target": "¡mucha mierda!",
+      "tags": ["idiom", "theatre", "informal"]
+    },
+    {
+      "id": "piece_of_cake_es_mx",
+      "from": "en",
+      "to": "es",
+      "region": "mx",
+      "source": "piece of cake",
+      "target": "pan comido",
+      "tags": ["idiom", "informal"]
+    },
+    {
+      "id": "piece_of_cake_es_es",
+      "from": "en",
+      "to": "es",
+      "region": "es",
+      "source": "piece of cake",
+      "target": "está chupado",
+      "tags": ["idiom", "informal"]
+    },
+    {
+      "id": "whats_up_es_mx",
+      "from": "en",
+      "to": "es",
+      "region": "mx",
+      "source": "what's up",
+      "target": "¿qué onda?",
+      "tags": ["slang", "informal"]
+    },
+    {
+      "id": "whats_up_es_es",
+      "from": "en",
+      "to": "es",
+      "region": "es",
+      "source": "what's up",
+      "target": "¿qué tal?",
+      "tags": ["informal"]
+    },
+    {
+      "id": "no_worries_en_uk",
+      "from": "en",
+      "to": "fr",
+      "region": "uk",
+      "source": "no worries",
+      "target": "pas de souci",
+      "tags": ["informal"]
+    },
+    {
+      "id": "no_worries_global",
+      "from": "en",
+      "to": "fr",
+      "region": "global",
+      "source": "no worries",
+      "target": "pas de problème",
+      "tags": ["neutral"]
+    },
+    {
+      "id": "thats_fine_en_in",
+      "from": "en",
+      "to": "en",
+      "region": "in",
+      "source": "that's fine",
+      "target": "that's okay only",
+      "tags": ["regional", "colloquial"]
+    }
+  ]
+}

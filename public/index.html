@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Language Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">DLT</div>
+        <div>
+          <div class="title">Dynamic Language Translator</div>
+          <div class="subtitle">Regional phrases • Idioms • Speech-to-text</div>
+        </div>
+      </div>
+      <div class="status" id="statusPill" aria-live="polite">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">Connecting…</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <div class="panelHeader">
+          <h2>Translate</h2>
+          <div class="actions">
+            <button class="btn ghost" id="swapBtn" title="Swap languages">
+              Swap
+            </button>
+            <button class="btn ghost" id="clearBtn" title="Clear text">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="fromLang">From</label>
+            <select id="fromLang"></select>
+          </div>
+          <div class="field">
+            <label for="toLang">To</label>
+            <select id="toLang"></select>
+          </div>
+          <div class="field">
+            <label for="region">Region</label>
+            <select id="region"></select>
+          </div>
+          <div class="field">
+            <label for="tags">Filter tags</label>
+            <input
+              id="tags"
+              placeholder="idiom, slang, informal"
+              autocomplete="off"
+            />
+            <div class="hint" id="tagHint"></div>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="box">
+            <div class="boxHeader">
+              <div class="boxTitle">Input</div>
+              <div class="boxTools">
+                <button class="btn small" id="micBtn" type="button">
+                  Start mic
+                </button>
+                <button class="btn small ghost" id="pasteBtn" type="button">
+                  Paste
+                </button>
+              </div>
+            </div>
+            <textarea
+              id="inputText"
+              placeholder="Type or use the microphone…"
+              rows="7"
+            ></textarea>
+            <div class="meter">
+              <div class="meterBar" id="meterBar"></div>
+            </div>
+            <div class="smallNote" id="micNote"></div>
+          </div>
+
+          <div class="box">
+            <div class="boxHeader">
+              <div class="boxTitle">Output</div>
+              <div class="boxTools">
+                <button class="btn small" id="copyBtn" type="button">
+                  Copy
+                </button>
+                <button class="btn small ghost" id="speakBtn" type="button">
+                  Speak
+                </button>
+              </div>
+            </div>
+            <div class="output" id="outputText" aria-live="polite"></div>
+            <div class="meta" id="outputMeta"></div>
+          </div>
+        </div>
+
+        <div class="footerRow">
+          <button class="btn primary" id="translateBtn">Translate</button>
+          <div class="tip">
+            Tip: try “<span class="kbd">break a leg</span>” with
+            <span class="kbd">en → es</span> and region
+            <span class="kbd">Mexico</span> or <span class="kbd">Spain</span>.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel side">
+        <h3>How it stays context-aware</h3>
+        <ul class="bullets">
+          <li>
+            <b>Regional phrase overrides</b> replace idioms like “piece of cake”
+            differently in Spain vs Mexico.
+          </li>
+          <li>
+            <b>Tag filtering</b> lets you prefer slang, neutral, theatre idioms,
+            etc.
+          </li>
+          <li>
+            <b>Offline-ready</b> base dictionary keeps the demo working without
+            paid APIs.
+          </li>
+        </ul>
+        <div class="divider"></div>
+        <h3>Backend endpoints</h3>
+        <div class="code">
+          <div><span class="pill">GET</span> /api/config</div>
+          <div><span class="pill">POST</span> /api/translate</div>
+          <div><span class="pill">GET</span> /api/health</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      Built with HTML/CSS/JS + Node.js (Express). Regional idioms are stored in
+      <span class="mono">server/data/idioms.json</span>.
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
